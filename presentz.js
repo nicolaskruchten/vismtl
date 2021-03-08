@@ -497,7 +497,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
       this.videoData = videoData;
       this.wouldPlay = wouldPlay;
       ajaxCall = {
-        url: "http://vimeo.com/api/v2/video/" + (this.videoId(this.videoData)) + ".json",
+        url: "https://vimeo.com/api/v2/video/" + (this.videoId(this.videoData)) + ".json",
         dataType: "jsonp",
         jsonpCallback: this.vimeoCallbackFunctionName
       };
@@ -516,7 +516,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     Vimeo.prototype.receiveVideoInfo = function(data) {
       var iframe, movieUrl, onReady, videoHtml;
-      movieUrl = "http://player.vimeo.com/video/" + (this.videoId(this.videoData)) + "?api=1&player_id=" + this.elementId;
+      movieUrl = "https://player.vimeo.com/video/" + (this.videoId(this.videoData)) + "?api=1&player_id=" + this.elementId;
       if (jQuery("#" + this.elementId).length === 0) {
         videoHtml = "<iframe id=\"" + this.elementId + "\" src=\"" + movieUrl + "\" width=\"" + this.width + "\" height=\"" + this.height + "\" frameborder=\"0\"></iframe>";
         jQuery(this.videoContainer).append(videoHtml);
